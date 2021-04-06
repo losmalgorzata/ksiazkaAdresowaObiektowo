@@ -16,12 +16,11 @@
 --
 + rejestracjaUzytkownika() : void
 + logowanieUzytkownika() : Integer
-+ podajDaneNowegoUzytkownika() : Uzytkownik
 + wypiszWszystkichUzytkownikow() : void
++ wczytajUzytkownikowZPliku() : void
+- podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : Bool
-- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
-
 
 
 </panel_attributes>
@@ -52,8 +51,11 @@
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
-- idOstatniegoAdresata : Integer
-- idUsunietegoAdresata : Integer
+- UzytkownikMenedzer : uzytkownikMenedzer
+--
+KsiazkaAdresowa()
++ rejestracjaUzytkownika() : void
++ wypiszWszystkichUzytkownikow() : void
 
 
 </panel_attributes>
@@ -70,9 +72,13 @@
     <panel_attributes>PlikZUzytkownikami
 --
 - nazwaPlikuZUzytkownikami : String
+- fstream : plikTekstowy
 --
++ PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku() : void
-- czyPlikJestPusty() : Bool</panel_attributes>
++ wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
+- czyPlikJestPusty() : Bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
