@@ -20,15 +20,14 @@ class AdresatMenedzer
 
 private:
     Adresat podajDaneNowegoAdresata();
-    void wyswietlDaneAdresata();
-    int pobierzZPlikuIdOstatniegoAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
     PlikZAdresatami plikZAdresatami;
 
 public:
     int dodajAdresata();
     void wyswietlWszystkichAdresatow();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-
+    int pobierzZPlikuIdOstatniegoAdresata();
 
     AdresatMenedzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami){};
 };
