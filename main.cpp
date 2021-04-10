@@ -16,6 +16,11 @@ int main()
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
+    //logging out - DODAJ adresaci.clear!!!
+    ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
+    //cout << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
+
+
 
 
 

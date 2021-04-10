@@ -24,5 +24,6 @@ public:
     int logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     int ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
     //void wyswietlWszystkichAdresatow();
 };

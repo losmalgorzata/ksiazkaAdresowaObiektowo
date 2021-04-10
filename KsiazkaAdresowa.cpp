@@ -24,6 +24,10 @@ int KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytko
 {
     uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(NoweIdZalogowanegoUzytkownika);
 }
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
+}
 /*
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {

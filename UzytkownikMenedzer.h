@@ -32,6 +32,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku();
     int ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
 };
 
 #endif
