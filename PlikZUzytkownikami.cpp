@@ -99,3 +99,7 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika(string daneJednegoUzytkown
     return uzytkownik;
 }
 
+string PlikZUzytkownikami::pobierzNazwePlikuZUzytkownikami()
+{
+    return nazwaPlikuZUzytkownikami;
+}

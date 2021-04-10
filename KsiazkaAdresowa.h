@@ -22,5 +22,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    int ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika);
     //void wyswietlWszystkichAdresatow();
 };

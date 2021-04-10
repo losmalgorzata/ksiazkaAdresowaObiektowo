@@ -1,5 +1,10 @@
 #include "UzytkownikMenedzer.h"
 
+int UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika)
+{
+    idZalogowanegoUzytkownika = NoweIdZalogowanegoUzytkownika;
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -97,3 +102,47 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     Sleep(1500);
     return 0;
 }
+
+void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
+{
+    string noweHaslo = "";
+    cout << "Podaj nowe haslo: ";
+    noweHaslo = MetodyPomocnicze::wczytajLinie();
+
+    for (int i=0; i < uzytkownicy.size(); i++)
+    {
+        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        {
+            uzytkownicy[i].ustawHaslo(noweHaslo);
+            cout << "Haslo zostalo zmienione" << endl;
+            Sleep(1500);
+        }
+    }
+
+    zapiszWszystkichUzytkownikowDoPliku();
+}
+
+void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
+{   fstream plikTekstowy;
+    string liniaZDanymiUzytkownika = "";
+    vector<string> uzytkownicyPoZmianie;
+
+    for (int i=0; i<uzytkownicy.size(); i++) {
+        liniaZDanymiUzytkownika = to_string(uzytkownicy[i].pobierzId())+"|"+uzytkownicy[i].pobierzLogin()+"|"+uzytkownicy[i].pobierzHaslo()+"|";
+        uzytkownicyPoZmianie.push_back(liniaZDanymiUzytkownika);
+    }
+
+    plikTekstowy.open(plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami(), ios::out);
+    if (plikTekstowy.good() == true)
+    {
+        for(vector<string>::const_iterator i = uzytkownicyPoZmianie.begin(); i != uzytkownicyPoZmianie.end(); ++i) {
+            plikTekstowy << *i << '\n';
+        }
+    }
+    else
+    {
+        cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami() << endl;
+    }
+    plikTekstowy.close();
+}
+

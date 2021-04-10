@@ -15,6 +15,15 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     uzytkownikMenedzer.logowanieUzytkownika();
 }
 
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
+{
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+}
+
+int KsiazkaAdresowa::ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika)
+{
+    uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(NoweIdZalogowanegoUzytkownika);
+}
 /*
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
