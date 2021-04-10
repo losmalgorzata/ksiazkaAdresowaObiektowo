@@ -8,14 +8,19 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    AdresatMenedzer adresatMenedzer;
+    //AdresatMenedzer adresatMenedzer;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), AdresatMenedzer(nazwaPlikuZAdresatami)
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
     {
+        //cout << "wszedlem" << endl;
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
-        adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        //cout << "mam uzytkownikow" << endl;
+        //adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        //cout << "mam adresatow" << endl;
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    int logowanieUzytkownika();
+    //void wyswietlWszystkichAdresatow();
 };

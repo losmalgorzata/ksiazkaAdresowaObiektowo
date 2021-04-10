@@ -43,7 +43,7 @@ int Adresat::pobierzId()
 
 int Adresat::pobierzIdUzytkownika()
 {
-    return IdUzytkownika;
+    return idUzytkownika;
 }
 
 string Adresat::pobierzImie()

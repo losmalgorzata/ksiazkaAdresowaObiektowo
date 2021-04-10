@@ -12,7 +12,7 @@ class PlikZAdresatami
 {
     const string nazwaPlikuZAdresatami;
     bool czyPlikJestPusty();
-    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
     public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};

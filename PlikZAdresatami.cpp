@@ -20,7 +20,7 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
-        if (czyPlikJestPusty(plikTekstowy) == true)
+        if (czyPlikJestPusty() == true)
         {
             plikTekstowy << liniaZDanymiAdresata;
         }
@@ -41,13 +41,13 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 {
     string liniaZDanymiAdresata = "";
 
-    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.id) + '|';
-    liniaZDanymiAdresata += konwerjsaIntNaString(adresat.idUzytkownika) + '|';
-    liniaZDanymiAdresata += adresat.imie + '|';
-    liniaZDanymiAdresata += adresat.nazwisko + '|';
-    liniaZDanymiAdresata += adresat.numerTelefonu + '|';
-    liniaZDanymiAdresata += adresat.email + '|';
-    liniaZDanymiAdresata += adresat.adres + '|';
+    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzId()) + '|';
+    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
+    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
+    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
+    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
 
     return liniaZDanymiAdresata;
 }
