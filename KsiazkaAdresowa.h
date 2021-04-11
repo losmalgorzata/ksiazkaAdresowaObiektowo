@@ -8,15 +8,15 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
-    //AdresatMenedzer adresatMenedzer;
+    AdresatMenedzer adresatMenedzer;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami)
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami)
     {
         //cout << "wszedlem" << endl;
         uzytkownikMenedzer.wczytajUzytkownikowZPliku();
         //cout << "mam uzytkownikow" << endl;
-        //adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+        adresatMenedzer.wyswietlWszystkichAdresatow();
         //cout << "mam adresatow" << endl;
     };
     void rejestracjaUzytkownika();
@@ -25,5 +25,5 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     int ustawIdZalogowanegoUzytkownika(int NoweIdZalogowanegoUzytkownika);
     int pobierzIdZalogowanegoUzytkownika();
-    //void wyswietlWszystkichAdresatow();
+    void wyswietlWszystkichAdresatow();
 };

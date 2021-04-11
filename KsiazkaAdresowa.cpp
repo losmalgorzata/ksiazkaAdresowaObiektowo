@@ -28,9 +28,9 @@ int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika()
 {
     uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika();
 }
-/*
+
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
 {
     adresatMenedzer.wyswietlWszystkichAdresatow();
-}*/
+}
 

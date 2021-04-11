@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "ksiazkaPoKonwersji.txt");
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 
     //logging and setting user's id
