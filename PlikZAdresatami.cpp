@@ -1,5 +1,11 @@
 #include "PlikZAdresatami.h"
 
+string PlikZAdresatami::pobierzNazwePlikuZAdresatami()
+{
+    return nazwaPlikuZAdresatami;
+}
+
+/*
 int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     //cout << "jestem w funkcji wczytania dresatow uzytkownika" << endl;
@@ -38,7 +44,7 @@ int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
     }
     else
         return 0;
-}
+}*/
 
 /*
 bool PlikZAdresatami::czyPlikJestPusty()

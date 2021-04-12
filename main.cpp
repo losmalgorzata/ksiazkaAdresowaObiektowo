@@ -11,17 +11,28 @@ int main()
 
     //logging and setting user's id
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(ksiazkaAdresowa.logowanieUzytkownika());
+    int idZalogowanegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
+    //cout << "user id: " << idZalogowanegoUzytkownika << endl;
 
     //password change
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    system("pause");
 
-    //logging out - DODAJ adresaci.clear!!!
+    //read contacts
+    ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    ksiazkaAdresowa.ustawIdOstatniegoAdresata(ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika));
+    int idOstatniegoAdresata = ksiazkaAdresowa.pobierzIdOstatniegoAdresata();
+    //cout << "ostatnie id: " << idOstatniegoAdresata << endl;
+    system("pause");
+
+    //display all contacts
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+
+     //logging out - DODAJ adresaci.clear!!!
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-    //cout << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
-
-
-
+    idZalogowanegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
+    //cout << "user id: " << idZalogowanegoUzytkownika << endl;
 
 
 

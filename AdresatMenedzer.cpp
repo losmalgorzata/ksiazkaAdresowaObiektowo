@@ -1,5 +1,96 @@
 #include "AdresatMenedzer.h"
 
+int AdresatMenedzer::ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata)
+{
+    idOstatniegoAdresata = noweIdOstatniegoAdresata;
+}
+
+int AdresatMenedzer::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
+}
+
+int AdresatMenedzer::pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
+{
+    int pozycjaRozpoczeciaIdAdresata = 0;
+    int idAdresata = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdAdresata));
+    return idAdresata;
+}
+
+Adresat AdresatMenedzer::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
+{
+    string linia = daneAdresataOddzielonePionowymiKreskami;
+    string delimiter = "|";
+    int idKontaktu = stoi(linia.substr(0, linia.find(delimiter)));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    int idUzytkownika = stoi(linia.substr(0, linia.find(delimiter)));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    string imie = linia.substr(0, linia.find(delimiter));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    string nazwisko = linia.substr(0, linia.find(delimiter));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    string numerTelefonu = linia.substr(0, linia.find(delimiter));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    string email = linia.substr(0, linia.find(delimiter));
+    linia.erase(0, linia.find(delimiter) + delimiter.length());
+    string adres = linia.substr(0, linia.find(delimiter));
+
+    Adresat adresat;
+    adresat.ustawId(idKontaktu);
+    adresat.ustawIdUzytkownika(idUzytkownika);
+    adresat.ustawImie(imie);
+    adresat.ustawNazwisko(nazwisko);
+    adresat.ustawNumerTelefonu(numerTelefonu);
+    adresat.ustawEmail(email);
+    adresat.ustawAdres(adres);
+
+    return adresat;
+}
+
+int AdresatMenedzer::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
+{
+    int pozycjaRozpoczeciaIdUzytkownika = daneJednegoAdresataOddzielonePionowymiKreskami.find_first_of('|') + 1;
+    int idUzytkownika = MetodyPomocnicze::konwersjaStringNaInt(MetodyPomocnicze::pobierzLiczbe(daneJednegoAdresataOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
+
+    return idUzytkownika;
+}
+
+int AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+{
+    Adresat adresat;
+    int idOstatniegoAdresata = 0;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    string daneOstaniegoAdresataWPliku = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(plikZAdresatami.pobierzNazwePlikuZAdresatami(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
+            if(idZalogowanegoUzytkownika == pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami))
+            {
+                adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+                adresaci.push_back(adresat);
+            }
+        }
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+    }
+    else
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+
+    plikTekstowy.close();
+
+    if (daneOstaniegoAdresataWPliku != "")
+    {
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
+        return idOstatniegoAdresata;
+    }
+    else
+        return 0;
+
+}
+
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {
     system("cls");
@@ -152,45 +243,6 @@ int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata()
     }
     return idOstatniegoAdresata;
 }*/
-/*
-Adresat AdresatMenedzer::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
-{
-    Adresat adresat;
-    string pojedynczaDanaAdresata = "";
-    int numerPojedynczejDanejAdresata = 1;
 
-    for (int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++)
-    {
-        if (daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku] != '|')
-        {
-            pojedynczaDanaAdresata += daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku];
-        }
-        else
-        {
-            switch(numerPojedynczejDanejAdresata)
-            {
-            cout << daneAdresataOddzielonePionowymiKreskami << endl;
-            case 1:
-                adresat.ustawId(atoi(pojedynczaDanaAdresata.c_str()));
-                cout << "id: " << adresat.pobierzId() << endl;
-                break;
-            case 2:
-                adresat.ustawIdUzytkownika(atoi(pojedynczaDanaAdresata.c_str()));
-                break;
-            case 3:
-                adresat.ustawImie(pojedynczaDanaAdresata);
-                break;
-            case 4:
-                adresat.ustawNazwisko(pojedynczaDanaAdresata);
-                break;
-            case 5:
-                adresat.ustawNumerTelefonu(pojedynczaDanaAdresata);
-                break;
-            case 6:
-                adresat.ustawEmail(pojedynczaDanaAdresata);
-                break;
-            case 7:
-                adresat.ustawAdres(pojedynczaDanaAdresata);
-                break;
-}
-*/
+
+

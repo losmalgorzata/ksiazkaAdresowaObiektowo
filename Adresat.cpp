@@ -2,7 +2,7 @@
 
 void Adresat::ustawId(int noweId)
 {
-    if (noweId > 0)
+    if (noweId >= 0)
         id = noweId;
 }
 

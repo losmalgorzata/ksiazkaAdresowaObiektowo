@@ -8,7 +8,6 @@
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "UzytkownikMenedzer.h"
-#include "AdresatMenedzer.h"
 
 class PlikZAdresatami
 {
@@ -19,6 +18,7 @@ class PlikZAdresatami
     public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    string pobierzNazwePlikuZAdresatami();
     //void dopiszAdresataDoPliku(Adresat adresat);
 
 };

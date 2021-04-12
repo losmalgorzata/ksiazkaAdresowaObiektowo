@@ -34,3 +34,17 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatMenedzer.wyswietlWszystkichAdresatow();
 }
 
+int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
+{
+    adresatMenedzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
+int KsiazkaAdresowa::ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata)
+{
+    adresatMenedzer.ustawIdOstatniegoAdresata(noweIdOstatniegoAdresata);
+}
+int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
+{
+    adresatMenedzer.pobierzIdOstatniegoAdresata();
+}
+
