@@ -13,9 +13,14 @@ class PlikZAdresatami
 {
     const string nazwaPlikuZAdresatami;
 
+    private:
+    bool czyPlikJestPusty();
+    string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+
     public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
     string pobierzNazwePlikuZAdresatami();
+    void dopiszAdresataDoPliku(Adresat adresat);
 };
 
 #endif
