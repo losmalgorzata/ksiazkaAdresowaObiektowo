@@ -15,7 +15,6 @@ class PlikZAdresatami
 
     public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI){};
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     string pobierzNazwePlikuZAdresatami();
 };
 
