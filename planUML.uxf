@@ -14,14 +14,13 @@
 - idZalogowanegoUzytkownika : Integer
 - uzytkownicy : vector&lt;Uzytkownik&gt;
 --
+UzytkownikMenedzer()
 + rejestracjaUzytkownika() : void
 + logowanieUzytkownika() : Integer
 + wypiszWszystkichUzytkownikow() : void
 + wczytajUzytkownikowZPliku() : void
 + zmianaHaslaZalogowanegoUzytkownika() : void
 + zapiszWszystkichUzytkownikowDoPliku() : void
-+ ustawIdZalogowanegoUzytkownika() : Integer
-+ pobierzIdZalogowanegoUzytkownika() : Integer
 - podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : Bool
@@ -66,7 +65,11 @@ KsiazkaAdresowa()
 + zmianaHaslaZalogowanegoUzytkownika() : void
 + ustawIdZalogowanegoUzytkownika() : Integer
 + pobierzIdZalogowanegoUzytkownika() : Integer
-
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
++ wyswietlWszystkichAdresatow() : void
++ pobierzIdOstatniegoAdresata() : Integer
++ ustawIdOstatniegoAdresata() : Integer
++ dodajAdresata() : Integer
 
 </panel_attributes>
     <additional_attributes/>
@@ -83,10 +86,9 @@ KsiazkaAdresowa()
 --
 - nazwaPlikuZUzytkownikami : String
 --
-+ PlikZUzytkownikami()
+PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku() : void
 + wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
-+ pobierzNazwePlikuZUzytkownikami() : String
 - czyPlikJestPusty() : Bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami() : String
 - pobierzDaneUzytkownika() : uzytkownik</panel_attributes>
@@ -105,7 +107,8 @@ KsiazkaAdresowa()
 + konwersjaIntNaString() : String
 + wczytajLinie() : String
 + pobierzLiczbe() : String
-+ konwersjaStringNaInt() : Integer</panel_attributes>
++ konwersjaStringNaInt() : Integer
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -132,7 +135,7 @@ KsiazkaAdresowa()
     <coordinates>
       <x>600</x>
       <y>300</y>
-      <w>330</w>
+      <w>340</w>
       <h>240</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
@@ -141,17 +144,20 @@ KsiazkaAdresowa()
 - adresaci : vector &lt;Adresat&gt;
 - idOstatniegoAdresata : Integer
 --
-+ dodajAdresata() : Integer
+AdresatMenedzer() 
 + wyswietlWszystkichAdresatow() : void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
-- pobierzZPlikuIdOstatniegoAdresata() : Integer;
-- podajDaneNowegoAdresata() : Adresat
++ pobierzIdOstatniegoAdresata() Integer
++ ustawIdOstatniegoAdresata() Integer
++ dodajAdresata() : Integer
 - wyswietlDaneAdresata() : void
+- pobierzDaneAdresata() : Adresat
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Integer
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Integer
+- podajDaneNowegoAdresata() : Adresat
 - dopiszAdresataDoPliku() : void
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
-- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Integer
-- pobierzDaneAdresata() : Adresat
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Integer</panel_attributes>
+- czyPlikJestPusty() : Bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -166,8 +172,8 @@ KsiazkaAdresowa()
 --
 - nazwaPlikuZAdresatami : String
 --
-+ PlikZAdresatami()
-+ dopiszAdresataDoPliku() : void
+PlikZAdresatami()
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku() : Integer
 - czyPlikJestPusty() : Bool
 - zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String </panel_attributes>
     <additional_attributes/>
