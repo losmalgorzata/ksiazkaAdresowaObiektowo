@@ -20,13 +20,17 @@ int main()
     system("pause");
 
     //read contacts
-    ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     ksiazkaAdresowa.ustawIdOstatniegoAdresata(ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika));
     int idOstatniegoAdresata = ksiazkaAdresowa.pobierzIdOstatniegoAdresata();
     //cout << "ostatnie id: " << idOstatniegoAdresata << endl;
     system("pause");
 
     //display all contacts
+    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+
+    //adding contact
+    ksiazkaAdresowa.ustawIdOstatniegoAdresata(ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata));
+    idOstatniegoAdresata = ksiazkaAdresowa.pobierzIdOstatniegoAdresata();
     ksiazkaAdresowa.wyswietlWszystkichAdresatow();
 
      //logging out - DODAJ adresaci.clear!!!

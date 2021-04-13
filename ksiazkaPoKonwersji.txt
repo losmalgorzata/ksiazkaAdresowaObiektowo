@@ -6,3 +6,5 @@
 5|3|Koku|Brzozowski|tajny|d@wp.pl|kreta 12/6 bialystok|
 6|3|Dobbie|Gliszczynska|84366|lae@wp.pl|gruntowa|
 7|1|Wandy|Krolewna|876366|dobbie@gmail.com|gruntowa|
+8|1|Koku|Los|8970707|njbfvs@gmial.pl|kreta 12 m 6 bialy|
+9|1|Grgeg|Ergerg|gereg|gegreg|gere|

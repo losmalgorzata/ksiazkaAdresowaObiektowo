@@ -1,5 +1,86 @@
 #include "AdresatMenedzer.h"
 
+string AdresatMenedzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
+{
+    string liniaZDanymiAdresata = "";
+
+    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzId()) + '|';
+    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
+    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
+    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
+    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
+    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
+
+    return liniaZDanymiAdresata;
+}
+
+int AdresatMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    Adresat adresat;
+
+    system("cls");
+    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+
+    adresaci.push_back(adresat);
+    dopiszAdresataDoPliku(adresat);
+
+    return ++idOstatniegoAdresata;
+}
+
+Adresat AdresatMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    Adresat adresat;
+
+    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+
+    cout << "Podaj imie: ";
+    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
+
+    cout << "Podaj nazwisko: ";
+    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
+
+    cout << "Podaj numer telefonu: ";
+    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj email: ";
+    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
+
+    cout << "Podaj adres: ";
+    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
+
+    return adresat;
+}
+
+void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
+{
+    string liniaZDanymiAdresata = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(plikZAdresatami.pobierzNazwePlikuZAdresatami(), ios::out | ios::app);
+
+    if (plikTekstowy.good() == true)
+    {
+        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+
+        if (czyPlikJestPusty() == true)
+        {
+            plikTekstowy << liniaZDanymiAdresata;
+        }
+        else
+        {
+            plikTekstowy << endl << liniaZDanymiAdresata ;
+        }
+    }
+    else
+    {
+        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
+    }
+    plikTekstowy.close();
+    system("pause");
+}
+
 int AdresatMenedzer::ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata)
 {
     idOstatniegoAdresata = noweIdOstatniegoAdresata;
@@ -121,48 +202,8 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-/*
-Adresat AdresatMenedzer::podajDaneNowegoAdresata()
-{
-    Adresat adresat;
-
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
-
-    cout << "Podaj imie: ";
-    adresat.ustawImie(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
-
-    cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(MetodyPomocnicze::wczytajLinie()));
-
-    cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
-
-    cout << "Podaj email: ";
-    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
-
-    cout << "Podaj adres: ";
-    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
-
-    return adresat;
-}*/
 
 
-/*
-int AdresatMenedzer::dodajAdresata()
-{
-    Adresat adresat;
-
-    system("cls");
-    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata();
-
-    adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
-
-    return ++idOstatniegoAdresata;
-}*/
-/*
 bool AdresatMenedzer::czyPlikJestPusty()
 {
     fstream plikTekstowy;
@@ -171,78 +212,7 @@ bool AdresatMenedzer::czyPlikJestPusty()
         return true;
     else
         return false;
-}/*
-
-/*void AdresatMenedzer::dopiszAdresataDoPliku(Adresat adresat)
-{
-    string liniaZDanymiAdresata = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
-
-    if (plikTekstowy.good() == true)
-    {
-        liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
-
-        if (czyPlikJestPusty() == true)
-        {
-            plikTekstowy << liniaZDanymiAdresata;
-        }
-        else
-        {
-            plikTekstowy << endl << liniaZDanymiAdresata ;
-        }
-    }
-    else
-    {
-        cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
-    }
-    plikTekstowy.close();
-    system("pause");
-}*/
-/*
-string AdresatMenedzer::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
-{
-    string liniaZDanymiAdresata = "";
-
-    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzId()) + '|';
-    liniaZDanymiAdresata += MetodyPomocnicze::konwersjaIntNaString(adresat.pobierzIdUzytkownika()) + '|';
-    liniaZDanymiAdresata += adresat.pobierzImie() + '|';
-    liniaZDanymiAdresata += adresat.pobierzNazwisko() + '|';
-    liniaZDanymiAdresata += adresat.pobierzNumerTelefonu() + '|';
-    liniaZDanymiAdresata += adresat.pobierzEmail() + '|';
-    liniaZDanymiAdresata += adresat.pobierzAdres() + '|';
-
-    return liniaZDanymiAdresata;
-}*/
-
-
-
-
-
-/*
-int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata()
-{
-    int idOstatniegoAdresata = 0;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    string daneOstaniegoAdresataWPliku = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true)
-    {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            plikTekstowy.close();
-    }
-    else
-        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
-
-    if (daneOstaniegoAdresataWPliku != "")
-    {
-        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-    }
-    return idOstatniegoAdresata;
-}*/
+}
 
 
 

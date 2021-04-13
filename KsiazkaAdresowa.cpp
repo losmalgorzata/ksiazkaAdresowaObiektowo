@@ -48,3 +48,8 @@ int KsiazkaAdresowa::pobierzIdOstatniegoAdresata()
     adresatMenedzer.pobierzIdOstatniegoAdresata();
 }
 
+int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+}
+
