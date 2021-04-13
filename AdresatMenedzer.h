@@ -36,4 +36,5 @@ public:
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
 };
 
+
 #endif
