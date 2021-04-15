@@ -16,7 +16,7 @@
 --
 UzytkownikMenedzer()
 + rejestracjaUzytkownika() : void
-+ logowanieUzytkownika() : Integer
++ logowanieUzytkownika() : void
 + wypiszWszystkichUzytkownikow() : void
 + zmianaHaslaZalogowanegoUzytkownika() : void
 + zapiszWszystkichUzytkownikowDoPliku() : void
@@ -60,7 +60,7 @@ UzytkownikMenedzer()
 KsiazkaAdresowa()
 + rejestracjaUzytkownika() : void
 + wypiszWszystkichUzytkownikow() : void
-+ logowanieUzytkownika() : Integer
++ logowanieUzytkownika() : void
 + zmianaHaslaZalogowanegoUzytkownika() : void
 + ustawIdZalogowanegoUzytkownika() : Integer
 + pobierzIdZalogowanegoUzytkownika() : Integer
