@@ -14,6 +14,9 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
         while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami))
         {
             uzytkownik = pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+            cout << uzytkownik.pobierzId() << endl;
+            cout << uzytkownik.pobierzLogin() << endl;
+            cout << uzytkownik.pobierzHaslo() << endl;
             uzytkownicy.push_back(uzytkownik);
         }
         plikTekstowy.close();
@@ -96,4 +99,9 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
     liniaZDanymiUzytkownika += uzytkownik.pobierzHaslo() + '|';
 
     return liniaZDanymiUzytkownika;
+}
+
+string PlikZUzytkownikami::pobierzNazwePlikuZUzytkownikami()
+{
+    return NAZWA_PLIKU_Z_UZYTKOWNIKAMI;
 }
