@@ -2,6 +2,7 @@
 
 #include "UzytkownikMenedzer.h"
 #include "AdresatMenedzer.h"
+//#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -11,10 +12,7 @@ class KsiazkaAdresowa
     AdresatMenedzer adresatMenedzer;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami)
-    {
-        uzytkownikMenedzer.wczytajUzytkownikowZPliku();
-    };
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), adresatMenedzer(nazwaPlikuZAdresatami){};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
@@ -27,5 +25,7 @@ public:
     int pobierzIdOstatniegoAdresata();
     int ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata);
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    char wybierzOpcjeZMenuUzytkownika();
+    char wybierzOpcjeZMenuGlownego();
 };
 
