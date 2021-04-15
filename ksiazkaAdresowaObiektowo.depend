@@ -3,10 +3,9 @@
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1618482393 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
+1618486526 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
-	"AdresatMenedzer.h"
 
 1618136458 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownik.h
 	<iostream>
@@ -28,7 +27,7 @@
 1618482303 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1618482303 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.h
+1618486952 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>

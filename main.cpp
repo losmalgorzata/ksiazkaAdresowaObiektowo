@@ -6,12 +6,21 @@ using namespace std;
 
 int main()
 {
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.rejestracjaUzytkownika();
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+}
+/*
+int main()
+{
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "ksiazkaPoKonwersji.txt");
 
     char wybor;
     int idZalogowanegoUzytkownika=0;
     int idOstatniegoAdresata=0;
-    ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
+    ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
 
     while(true){
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0){
@@ -56,8 +65,7 @@ int main()
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
             default:
                 cout << endl << "Nie ma takiej opcji w menu" << endl << endl;
@@ -69,3 +77,4 @@ int main()
 
     return 0;
 }
+*/

@@ -23,6 +23,7 @@ UzytkownikMenedzer()
 - podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : Bool
+- czyUzytkownikJestZalogowany() : Bool
 
 
 
