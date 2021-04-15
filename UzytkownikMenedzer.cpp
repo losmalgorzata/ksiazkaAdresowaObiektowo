@@ -70,7 +70,7 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-int UzytkownikMenedzer::logowanieUzytkownika()
+void UzytkownikMenedzer::logowanieUzytkownika()
 {
     string login="", haslo="";
     cout << "Podaj login: ";
@@ -87,7 +87,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                     cout << "Zalogowales sie" << endl;
                     Sleep(1000);
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-                    return idZalogowanegoUzytkownika;
+                    return ;//idZalogowanegoUzytkownika;
                 }
             }
             cout << "Podales 3 razy bledne haslo" << endl;
@@ -96,7 +96,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl;
     Sleep(1500);
-    return 0;
+    //return 0;
+    return ;
 }
 
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()

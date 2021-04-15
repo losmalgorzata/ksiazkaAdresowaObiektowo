@@ -9,8 +9,8 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "ksiazkaPoKonwersji.txt");
 
     char wybor;
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+    int idZalogowanegoUzytkownika=0;
+    int idOstatniegoAdresata=0;
     ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(0);
 
     while(true){
