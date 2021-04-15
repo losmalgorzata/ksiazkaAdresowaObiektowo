@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1618493272 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\main.cpp
+1618493947 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1618487932 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
+1618493947 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
 
@@ -16,14 +16,18 @@
 1618487255 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1618487255 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\metodypomocnicze.h
+1618494040 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\metodypomocnicze.h
 	<iostream>
 	<sstream>
+	<fstream>
+	<windows.h>
+	<vector>
+	<algorithm>
 
-1618487255 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.cpp
+1618493947 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1618493219 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.h
+1618493947 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
