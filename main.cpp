@@ -9,9 +9,8 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     char wybor;
-    int idZalogowanegoUzytkownika=0;
-    int idOstatniegoAdresata=0;
-    //ksiazkaAdresowa.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    //int idZalogowanegoUzytkownika=0;
+    //int idOstatniegoAdresata=0;
 
     while(true){
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0){
@@ -22,9 +21,6 @@ int main()
                 break;
             case '2':
                 ksiazkaAdresowa.logowanieUzytkownika();
-                //idZalogowanegoUzytkownika = ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika();
-                //ksiazkaAdresowa.ustawIdOstatniegoAdresata(ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika));
-                //idOstatniegoAdresata = ksiazkaAdresowa.pobierzIdOstatniegoAdresata();
                 break;
             case '9':
                 exit(0);
@@ -39,8 +35,6 @@ int main()
             switch(wybor){
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
-                //ksiazkaAdresowa.ustawIdOstatniegoAdresata(ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata));
-                //idOstatniegoAdresata = ksiazkaAdresowa.pobierzIdOstatniegoAdresata();
                 break;
             case '2':
                 break;
