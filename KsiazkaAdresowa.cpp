@@ -114,3 +114,16 @@ void KsiazkaAdresowa::wyszukajPoImieniu()
         system("pause");
     }
 }
+
+void KsiazkaAdresowa::wyszukajPoNazwisku()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->wyszukajPoNazwisku();
+    }
+    else
+    {
+        cout << "Nalezy sie najpierw zalogowac" << endl;
+        system("pause");
+    }
+}

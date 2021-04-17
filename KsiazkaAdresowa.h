@@ -36,6 +36,7 @@ public:
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     void wyszukajPoImieniu();
+    void wyszukajPoNazwisku();
 };
 
 #endif

@@ -30,6 +30,7 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
     void wyszukajPoImieniu();
+    void wyszukajPoNazwisku();
     void wyswietlDanePojedynczejOsoby(Adresat adresat);
 };
 

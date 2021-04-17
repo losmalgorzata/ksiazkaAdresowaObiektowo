@@ -72,6 +72,8 @@ KsiazkaAdresowa()
 + pobierzIdZalogowanegoUzytkownika() : Integer
 + wybierzOpcjeZMenuUzytkownika() : Char
 + wybierzOpcjeZMenuGlownego() : Char
++ wyszukajPoImieniu() : void
++ wyszukajPoNazwisku() : void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -149,6 +151,9 @@ AdresatMenedzer()
 + wyswietlWszystkichAdresatow() : void
 + wyswietlDaneAdresata() : void
 + dodajAdresata() : void
++ wyszukajPoImieniu() : void
++ wyszukajPoNazwisko() : void
++ wyswietlDanePojedynczejOsoby() : void
 - wyswietlDaneAdresata() : void
 - podajDaneNowegoAdresata() : Adresat
 </panel_attributes>

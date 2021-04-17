@@ -96,6 +96,23 @@ void AdresatMenedzer::wyszukajPoImieniu()
     system("pause");
 }
 
+void AdresatMenedzer::wyszukajPoNazwisku()
+{
+    string nazwiskoDoWyszukania;
+    cout << "Podaj nazwisko do wyszukania: " << endl;
+    nazwiskoDoWyszukania = MetodyPomocnicze::wczytajLinie();
+    nazwiskoDoWyszukania = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoDoWyszukania);
+    for (int i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzNazwisko() == nazwiskoDoWyszukania)
+        {
+            wyswietlDanePojedynczejOsoby(adresaci[i]);
+        }
+    }
+    cout << endl;
+    system("pause");
+}
+
 void AdresatMenedzer::wyswietlDanePojedynczejOsoby(Adresat adresat){
     cout << adresat.pobierzId() << "|" << adresat.pobierzImie() << "|" << adresat.pobierzNazwisko() << "|";
     cout << adresat.pobierzNumerTelefonu() << "|" << adresat.pobierzEmail() << "|" << adresat.pobierzAdres() << endl;
