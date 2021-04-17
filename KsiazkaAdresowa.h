@@ -35,6 +35,7 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
+    void wyszukajPoImieniu();
 };
 
 #endif

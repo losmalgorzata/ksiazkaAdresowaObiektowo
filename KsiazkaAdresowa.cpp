@@ -101,3 +101,16 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 
     return wybor;
 }
+
+void KsiazkaAdresowa::wyszukajPoImieniu()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->wyszukajPoImieniu();
+    }
+    else
+    {
+        cout << "Nalezy sie najpierw zalogowac" << endl;
+        system("pause");
+    }
+}

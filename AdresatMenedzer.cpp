@@ -78,3 +78,25 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
+
+void AdresatMenedzer::wyszukajPoImieniu()
+{
+    string imieDoWyszukania;
+    cout << "Podaj imie do wyszukania: " << endl;
+    imieDoWyszukania = MetodyPomocnicze::wczytajLinie();
+    imieDoWyszukania = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imieDoWyszukania);
+    for (int i = 0; i < adresaci.size(); i++)
+    {
+        if (adresaci[i].pobierzImie() == imieDoWyszukania)
+        {
+            wyswietlDanePojedynczejOsoby(adresaci[i]);
+        }
+    }
+    cout << endl;
+    system("pause");
+}
+
+void AdresatMenedzer::wyswietlDanePojedynczejOsoby(Adresat adresat){
+    cout << adresat.pobierzId() << "|" << adresat.pobierzImie() << "|" << adresat.pobierzNazwisko() << "|";
+    cout << adresat.pobierzNumerTelefonu() << "|" << adresat.pobierzEmail() << "|" << adresat.pobierzAdres() << endl;
+}
