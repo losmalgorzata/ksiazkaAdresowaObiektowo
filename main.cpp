@@ -9,8 +9,6 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     char wybor;
-    //int idZalogowanegoUzytkownika=0;
-    //int idOstatniegoAdresata=0;
 
     while(true){
         if (ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() == 0){
@@ -46,8 +44,10 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
+                //ksiazkaAdresowa.usunKontakt();
                 break;
             case '6':
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

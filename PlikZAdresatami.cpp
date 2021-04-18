@@ -141,3 +141,32 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
 }
+
+
+string PlikZAdresatami::pobierzNazwePlikuZAdresatami()
+{
+    return NAZWA_PLIKU_Z_ADRESATAMI;
+}
+
+vector <Adresat> PlikZAdresatami::wczytajCalyPlik()
+{
+    vector <Adresat> adresaci;
+    Adresat adresat;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(NAZWA_PLIKU_Z_ADRESATAMI.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true)
+    {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami))
+        {
+            adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+            adresaci.push_back(adresat);
+        }
+        plikTekstowy.close();
+    }
+    return adresaci;
+
+}
+
+

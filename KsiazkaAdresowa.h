@@ -37,6 +37,8 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void wyszukajPoImieniu();
     void wyszukajPoNazwisku();
+    void edytujAdresata();
+    //int usunKontakt();
 };
 
 #endif

@@ -18,6 +18,7 @@ public:
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     static int konwersjaStringNaInt(string liczba);
     static char wczytajZnak();
+    static int wczytajLiczbeCalkowita();
 };
 
 #endif

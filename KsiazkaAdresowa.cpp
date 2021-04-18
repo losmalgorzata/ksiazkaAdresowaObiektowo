@@ -127,3 +127,31 @@ void KsiazkaAdresowa::wyszukajPoNazwisku()
         system("pause");
     }
 }
+
+void KsiazkaAdresowa::edytujAdresata()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->edytujAdresata();
+    }
+    else
+    {
+        cout << "Nalezy sie najpierw zalogowac" << endl;
+        system("pause");
+    }
+}
+
+/*
+int KsiazkaAdresowa::usunKontakt()
+{
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->usunKontakt(adresaci);
+    }
+    else
+    {
+        cout << "Nalezy sie najpierw zalogowac" << endl;
+        system("pause");
+    }
+}
+*/

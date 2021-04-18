@@ -936,7 +936,7 @@ int usunAdresata(vector <Adresat> &adresaci)
             else
             {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
-                system("p       ause");
+                system("pause");
                 return 0;
             }
         }
