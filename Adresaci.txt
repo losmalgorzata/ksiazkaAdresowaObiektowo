@@ -1,5 +1,5 @@
 0|1|Mag|Los|65|los.malgorzata@wp.pl|bialy|
-1|1|Piotrr|Brzoza|89|piotr@wp.pl|lapy|
+1|1|Piotr|Brzoza|89|piotr@wp.pl|lapy|
 2|2|Michal|Gliszczynski|98|michal@wp.pl|gruntow 6|
 3|1|Justynka|Gliszczynska|97867|justyna@wp.pl|gruntowa 6 w bialymstoku|
 4|2|Justyna|Los|9378346|b@wp.pl|dobrzyniewo|
@@ -7,4 +7,6 @@
 6|3|Dobbie|Gliszczynska|84366|lae@wp.pl|gruntowa|
 7|1|Wandy|Krolewna|876366|dobbie@gmail.com|gruntowa|
 8|1|Koku|Los|8970707|njbfvs@gmial.pl|kreta 12 m 6 bialy|
-9|1|G|G|g|g|g|
+9|1|Grgeg|Ergerg|gereg|gegreg|gere|
+10|1|Bruno|Bruno|86593645|bruno@gmail.com|Paryz|
+11|1|Bb|Pierwsze|45|sgsgsgsgs|sgsggss|
