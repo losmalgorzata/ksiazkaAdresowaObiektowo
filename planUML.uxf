@@ -13,6 +13,7 @@
 --
 - idZalogowanegoUzytkownika : Integer
 - uzytkownicy : vector&lt;Uzytkownik&gt;
+- plikZUzytkownikami : PlikZUzytkownikami
 --
 UzytkownikMenedzer()
 + rejestracjaUzytkownika() : void
@@ -74,6 +75,8 @@ KsiazkaAdresowa()
 + wybierzOpcjeZMenuGlownego() : Char
 + wyszukajPoImieniu() : void
 + wyszukajPoNazwisku() : void
++ edytujAdresata() : void
++ usunAdresata() : Integer
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -112,7 +115,8 @@ PlikZUzytkownikami()
 + wczytajLinie() : String
 + konwersjaStringNaInt() : Integer
 + zamienPierwszaLitereNaDuzaAPozostaleNaMale() : String
-+ wczytajZnak() : Char</panel_attributes>
++ wczytajZnak() : Char
++ wczytajLiczbeCalkowita() : Integer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -146,14 +150,22 @@ PlikZUzytkownikami()
 --
 - ID_ZALOGOWANEGO_UZYTKOWNIKA : Integer
 - adresaci : vector &lt;Adresat&gt;
+- plikZAdresatami : PlikZAdresatami
 --
 AdresatMenedzer() 
++ dodajAdresata() : void
 + wyswietlWszystkichAdresatow() : void
 + wyswietlDaneAdresata() : void
-+ dodajAdresata() : void
 + wyszukajPoImieniu() : void
-+ wyszukajPoNazwisko() : void
++ wyszukajPoNazwisku() : void
 + wyswietlDanePojedynczejOsoby() : void
++ podajIdWybranegoAdresata() : Integer
++ wybierzOpcjeZMenuEdycja() : Char
++ usunPlik() : void
++ zmienNazwePliku() : void
++ usunAdresata() : Integer
++ usunWybranegoAdresataZPliku() : void
++ edytujWybranegoAdresataWPliku() : void
 - wyswietlDaneAdresata() : void
 - podajDaneNowegoAdresata() : Adresat
 </panel_attributes>
@@ -175,12 +187,16 @@ AdresatMenedzer()
 PlikZAdresatami()
 + dopiszAdresataDoPliku() : void
 + wczytajAdresatowZalogowanegoUzytkownikaZPliku() : vector &lt;Adresat&gt;
-- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
++ zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami() : String
++ wczytajCalyPlik() : vector &lt;Adresat&gt;
++ pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Integer
++ pobierzZPlikuIdOstatniegoAdresata() : Integer
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Integer
 - czyPlikJestPusty() : Bool
 - pobierzLiczbe() : String
 - pobierzDaneAdresata() : Adresat
-- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : Integer
 - pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : Integer
+
 </panel_attributes>
     <additional_attributes/>
   </element>
