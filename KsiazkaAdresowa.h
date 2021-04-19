@@ -38,7 +38,7 @@ public:
     void wyszukajPoImieniu();
     void wyszukajPoNazwisku();
     void edytujAdresata();
-    //int usunKontakt();
+    int usunAdresata();
 };
 
 #endif

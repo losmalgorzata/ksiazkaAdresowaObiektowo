@@ -32,6 +32,8 @@ public:
     vector <Adresat> wczytajCalyPlik();
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
+    int pobierzZPlikuIdOstatniegoAdresata();
+    void ustawIdOstatniegoAdresata(int noweId);
 };
 
 #endif

@@ -36,10 +36,13 @@ public:
     int podajIdWybranegoAdresata();
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
-    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+    int usunAdresata();
+    int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+    void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
 };
 
 #endif

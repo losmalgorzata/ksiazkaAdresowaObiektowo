@@ -141,12 +141,12 @@ void KsiazkaAdresowa::edytujAdresata()
     }
 }
 
-/*
-int KsiazkaAdresowa::usunKontakt()
+
+int KsiazkaAdresowa::usunAdresata()
 {
     if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
     {
-        adresatMenedzer->usunKontakt(adresaci);
+        adresatMenedzer->usunAdresata();
     }
     else
     {
@@ -154,4 +154,4 @@ int KsiazkaAdresowa::usunKontakt()
         system("pause");
     }
 }
-*/
+
