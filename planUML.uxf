@@ -91,7 +91,6 @@ KsiazkaAdresowa()
     <panel_attributes>PlikZUzytkownikami
 --
 - NAZWA_PLIKU_Z_UZYTKOWNIKAMI : String
-- plikTekstowy : fstream
 --
 PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku() : void

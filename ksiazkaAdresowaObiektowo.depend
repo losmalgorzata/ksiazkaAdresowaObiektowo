@@ -37,7 +37,7 @@
 	"Uzytkownik.h"
 	"PlikZUzytkownikami.h"
 
-1618510150 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzuzytkownikami.h
+1618851449 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -60,7 +60,7 @@
 1618843968 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\adresatmenedzer.cpp
 	"AdresatMenedzer.h"
 
-1618849195 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\adresatmenedzer.h
+1618851150 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\adresatmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
