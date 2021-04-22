@@ -10,7 +10,7 @@ void AdresatMenedzer::dodajAdresata()
 
     adresaci.push_back(adresat);
     if(plikZAdresatami.dopiszAdresataDoPliku(adresat))
-        cout << "Nowy adresat zosta³ dodany" << endl;
+        cout << "Nowy adresat zostal dodany" << endl;
     else
         cout << "Blad. Adresat nie zostal dodany" << endl;
     system("pause");
@@ -250,7 +250,7 @@ int AdresatMenedzer::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
     int numerLiniiUsuwanegoAdresata = 0;
-    int idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
+    int idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -270,20 +270,16 @@ int AdresatMenedzer::usunAdresata()
             {
                 usunWybranegoAdresataZPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
-                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
-                system("pause");
                 if(idOstatniegoAdresata == idUsuwanegoAdresata)
                 {
-                    idOstatniegoAdresata--;
+                    idOstatniegoAdresata = plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
                 }
                 plikZAdresatami.ustawIdOstatniegoAdresata(idOstatniegoAdresata);
-                cout << "idOstatniegoAdresata " << idOstatniegoAdresata << endl;
                 return idOstatniegoAdresata;
             }
             else
             {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
-                system("pause");
                 return idOstatniegoAdresata;
             }
         }
@@ -291,7 +287,6 @@ int AdresatMenedzer::usunAdresata()
     if (czyIstniejeAdresat == false)
     {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
-        system("pause");
         return idOstatniegoAdresata;
     }
     return idOstatniegoAdresata;
