@@ -46,10 +46,10 @@
 	"MetodyPomocnicze.h"
 	"PlikTekstowy.h"
 
-1619078733 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzuzytkownikami.cpp
+1619080511 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1619079133 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.cpp
+1619080511 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 
 1618497763 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\adresat.cpp
@@ -69,15 +69,16 @@
 	"Adresat.h"
 	"PlikZAdresatami.h"
 
-1619078733 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzadresatami.h
+1619080810 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzadresatami.h
 	<iostream>
 	<vector>
 	<fstream>
 	<cstdlib>
 	"Adresat.h"
 	"MetodyPomocnicze.h"
+	"PlikTekstowy.h"
 
-1618843522 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzadresatami.cpp
+1619080810 source:c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\plikzadresatami.cpp
 	"PlikZAdresatami.h"
 
 1619078733 c:\users\losma\onedrive\pulpit\nauka_programowania\przyszly_programista\oop\ksiazkaadresowaobiektowo\pliktekstowy.h

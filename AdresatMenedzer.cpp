@@ -305,7 +305,7 @@ void AdresatMenedzer::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string nazwaTymczasowegoPlikuZAdresatami = "tymczasowy.txt";
 
-    odczytywanyPlikTekstowy.open(plikZAdresatami.pobierzNazwePlikuZAdresatami(), ios::in);
+    odczytywanyPlikTekstowy.open(plikZAdresatami.pobierzNazwePliku().c_str(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
     int idAdresata = 0;
@@ -335,8 +335,8 @@ void AdresatMenedzer::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata)
     }
     odczytywanyPlikTekstowy.close();
     tymczasowyPlikTekstowy.close();
-    usunPlik(plikZAdresatami.pobierzNazwePlikuZAdresatami());
-    zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, plikZAdresatami.pobierzNazwePlikuZAdresatami());
+    usunPlik(plikZAdresatami.pobierzNazwePliku());
+    zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, plikZAdresatami.pobierzNazwePliku());
 }
 
 void AdresatMenedzer::edytujWybranegoAdresataWPliku(Adresat adresat)
@@ -349,7 +349,7 @@ void AdresatMenedzer::edytujWybranegoAdresataWPliku(Adresat adresat)
     fstream plikTekstowy, tymczasowyPlikTekstowy;
     string nazwaTymczasowegoPlikuZAdresatami = "tymczasowy.txt";
 
-    plikTekstowy.open(plikZAdresatami.pobierzNazwePlikuZAdresatami(), ios::in);
+    plikTekstowy.open(plikZAdresatami.pobierzNazwePliku(), ios::in);
     tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
 
     if (plikTekstowy.good() == true && adresat.pobierzId() != 0)
@@ -391,8 +391,8 @@ void AdresatMenedzer::edytujWybranegoAdresataWPliku(Adresat adresat)
 
     plikTekstowy.close();
     tymczasowyPlikTekstowy.close();
-    usunPlik(plikZAdresatami.pobierzNazwePlikuZAdresatami());
-    zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, plikZAdresatami.pobierzNazwePlikuZAdresatami());
+    usunPlik(plikZAdresatami.pobierzNazwePliku());
+    zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, plikZAdresatami.pobierzNazwePliku());
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
