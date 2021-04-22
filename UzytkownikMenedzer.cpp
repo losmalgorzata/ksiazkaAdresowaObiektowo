@@ -140,7 +140,8 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
         uzytkownicyPoZmianie.push_back(liniaZDanymiUzytkownika);
     }
 
-    plikTekstowy.open(plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami(), ios::out);
+    //plikTekstowy.open(plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami(), ios::out);
+    plikTekstowy.open(plikZUzytkownikami.pobierzNazwePliku(), ios::out);
     if (plikTekstowy.good() == true)
     {
         for(vector<string>::const_iterator i = uzytkownicyPoZmianie.begin(); i != uzytkownicyPoZmianie.end(); ++i) {
@@ -149,7 +150,8 @@ void UzytkownikMenedzer::zapiszWszystkichUzytkownikowDoPliku()
     }
     else
     {
-        cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami() << endl;
+        //cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePlikuZUzytkownikami() << endl;
+        cout << "Nie mozna otworzyc pliku " << plikZUzytkownikami.pobierzNazwePliku() << endl;
     }
     plikTekstowy.close();
 }
